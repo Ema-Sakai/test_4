@@ -3,12 +3,13 @@
 ## シーケンス図（Sequence Diagram）
 
 ```mermaid
+%%{init: {'theme': 'neutral'}}%%
 sequenceDiagram
     actor User
     participant API as Spring Boot API
     participant DB as Database
 
-    rect rgb(200, 220, 240)
+    rect rgba(0, 0, 0, 0.05)
         Note right of User: 予約情報の作成フロー
         User ->> API: POST /reservations (予約情報)
         API ->> API: 入力データ検証
@@ -23,7 +24,7 @@ sequenceDiagram
         end
     end
 
-    rect rgb(220, 240, 200)
+    rect rgba(0, 0, 0, 0.05)
         Note right of User: 予約情報の取得フロー
         User ->> API: GET /reservations/{reservationNumber}
         alt 予約番号の形式が正しい場合
@@ -40,7 +41,7 @@ sequenceDiagram
         end
     end
 
-    rect rgb(240, 220, 200)
+    rect rgba(0, 0, 0, 0.05)
         Note right of User: 予約情報の更新フロー
         User ->> API: PUT /reservations/{reservationNumber}
         alt 予約番号の形式が正しい場合
@@ -64,7 +65,7 @@ sequenceDiagram
         end
     end
 
-    rect rgb(240, 200, 220)
+    rect rgba(0, 0, 0, 0.05)
         Note right of User: 予約情報の削除フロー
         User ->> API: DELETE /reservations/{reservationNumber}
         alt 予約番号の形式が正しい場合
@@ -83,3 +84,4 @@ sequenceDiagram
         end
     end
 ```
+
